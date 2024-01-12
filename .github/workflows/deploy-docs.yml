@@ -1,0 +1,21 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy Template
+        uses: actions/github-script@v5
+        with:
+          script: |
+            await octokit.actions.createWorkflowDispatch({
+              owner: 'Ludvigpbf',
+              repo: 'deploy-template',
+              workflow: 'deploy.yml',
+            })
+          token: ${{ secrets.GITHUB_TOKEN }}
