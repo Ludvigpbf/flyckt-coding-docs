@@ -17,5 +17,5 @@ jobs:
               owner: 'Ludvigpbf',
               repo: 'deploy-template',
               workflow: 'deploy.yml',
-            })
-          token: ${{ secrets.GITHUB_TOKEN }}
+            });
+          github-token: ${{ secrets.GITHUB_TOKEN }}
