@@ -19,8 +19,10 @@ jobs:
               ref: 'deploy',
               workflow_id: 'deploy.yml',
               inputs: {
-                'repo-name': github.context.payload.repository.full_name
+                'repo-name': process.env.GITHUB_REPOSITORY
               }
             });
             console.log('Workflow dispatch response:', data);
           github-token: ${{ secrets.ACCESS_TOKEN }}
+          env:
+            GITHUB_REPOSITORY: ${{ github.repository }}
