@@ -13,10 +13,11 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
-            const { data } = await github.actions.createWorkflowDispatch({
+            const { data } = await github.rest.actions.createWorkflowDispatch({
               owner: 'Ludvigpbf',
               repo: 'deploy-template',
-              workflow: 'deploy.yml',
+              ref: 'deploy',
+              workflow_id: 'deploy.yml',
             });
             console.log('Workflow dispatch response:', data);
           github-token: ${{ secrets.GITHUB_TOKEN }}
