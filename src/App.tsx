@@ -22,7 +22,7 @@ function App() {
           count is working now maby now or now or now?{count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Edit <code>src/App.tsx</code> and save to test HMR trying
         </p>
       </div>
       <p className="read-the-docs">
